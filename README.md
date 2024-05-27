@@ -12,13 +12,14 @@ two directories needs to be at the same level.
 	```
     # In attention/ directory,
 	conda create -n attention python=3.9.16
-    pip install -r requirements.txt
+    pip install -r attention/requirements.txt
 	```
+ 2. Install and setup [tree-sitter-python](https://github.com/tree-sitter/py-tree-sitter)
 
 2. To set up the DirectProbe code, follow the instructions from [DirectProbe](https://github.com/utahnlp/DirectProbe). Note that DirectProbe requires Gurobi but can also run without it. However, running without Gurobi results into unstable results.
 
 	We ran the the experiments with Gurobi and provide all the results generated during our experiments in the `DirectProbe/results` directory.
-	We ran DirectProbe only for layers 5,9 and 12 and so provide results only for these layers.
+	We ran DirectProbe only for the last layer and some intermediate layers. So, we provide results only for these layers. However, it can be run for other layers easily by passing the layer number to the argument.
 
 ### Generating plots and results
 All the results provided in the paper is available in `results_attention_tsne.ipynb` and `results_hidden_repr.ipynb`. Before running the notebooks,
@@ -101,3 +102,10 @@ In `attention/` directory,
 	Note that, gurobi creates multiple processes and the code takes a lot of time to run. The time taken depends on number of cores available. We ran our experiments on a processor with 32 cores.
 	
 	The results generated here might vary slightly from those reported in the paper since the data points are sampled randomly.
+
+
+[WIP] Extension to other models
+
+
+
+[WIP] Extension to other programming language
